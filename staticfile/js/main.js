@@ -1,7 +1,6 @@
 function sooncoming() {
   automsg({ buttonText: "关闭", message: "开发中..." });
 }
-if(!Ow_Server){Ow_Server = "";}
 //服务器通信============================
 function AjaxFn(url, data, callbackFn) {
   data.token = Cookies.get("token");
