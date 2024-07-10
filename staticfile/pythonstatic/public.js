@@ -35,15 +35,3 @@ var numberTest = function(v) {
     return reg['test'](v);
 };
 
-
-function AjaxFn(url, data, callbackFn) {
-    $.ajax({
-        'url': url,
-        'type': 'POST',
-        'data': data,
-        'error': function(err) {},
-        'success': function(res) {
-            callbackFn(res);
-        }
-    });
-}

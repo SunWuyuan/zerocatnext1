@@ -355,7 +355,7 @@ class VideoProvider {
 //项目数据下载URL：
 function getProjectUrl(asset) {
   var assetIdParts = asset.assetId.split(".");
-  var assetUrlParts = ["//"+window.location.host+"/", 'scratch/play/project/', assetIdParts[0]];
+  var assetUrlParts = [Ow_Server+"/", 'scratch/play/project/', assetIdParts[0],'?token=',localStorage.getItem('token')];
   //var assetUrlParts = [  "//localhost:3000/",  "scratch/play/project/", assetIdParts[0],];
   if (assetIdParts[1]) {
     assetUrlParts.push(assetIdParts[1]);
@@ -365,7 +365,7 @@ function getProjectUrl(asset) {
 //项目资源文件下载URL
 function getAssetUrl(asset) {
   var assetUrlParts = [
-    S3staticurl + "/material/asset/",
+    S3url + "/material/asset/",
     asset.assetId,
     ".",
     asset.dataFormat,

@@ -25,9 +25,8 @@ function AjaxFn(url, data, callbackFn) {
 }
 //服务器通信============================
 function AjaxGet(url, data, callbackGet, needauth) {
-  if (needauth == true) {
-    data.token = Cookies.get("token");
-  }
+  data.token = Cookies.get("token");
+
   //data.token = Cookies.get('token');
   $.ajax({
     url: Ow_Server + url,

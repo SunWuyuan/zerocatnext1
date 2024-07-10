@@ -80,14 +80,14 @@ function projecthtml(type, d) {
                 <div class="mdui-col-xl-2 mdui-col-lg-2 mdui-col-md-3 mdui-col-sm-6 mdui-col-xs-12" style="margin:5px 0px 5px 0px;">
   <mdui-card variant="outlined" clickable ondragstart="return false" style="user-select:none;width: 100%;overflow: hidden">
   <mdui-card clickable href="/scratch/play.html?id=${d.id}">
-    <img src="${S3staticurl}/scratch_slt/${d.id}"   onerror="this.onerror=null; this.src='${staticurl}/img/scratchdefault.png';"
+    <img src="${S3url}/scratch_slt/${d.id}"   onerror="this.onerror=null; this.src='${staticurl}/img/scratchdefault.png';"
         style="pointer-events: none;width: 100%;" />
     <div class="card-media-covered">
             <div class="card-media-covered-text">${tzzt}${d.title}</div>
     </div>
   </mdui-card>
   <div href='/user.html?id=${d.authorid}' style="padding: 16px;">
-    <img class="card-avatar" src="/api/usertx?id=${d.authorid}" />
+    <img class="card-avatar" src="${S3url}/user/${d.images}" />
     <div class="card-user card-user-name">${d.display_name}</div>
     <div class="card-user card-user-motto">${d.view_count}浏览</div>
   </div>
@@ -103,7 +103,7 @@ function projecthtml(type, d) {
 						<div class="substr card-main-subtitle">${d.description}</div>
 					</div>
 				<div style="padding: 16px;">
-					<img class="card-avatar" src="/api/usertx?id=${d.authorid}" />
+					<img class="card-avatar" src="${S3url}/user/${d.images}" />
 					<div class="card-user card-user-name">${d.display_name}</div>
 					<div class="card-user card-user-motto">${d.view_count}浏览</div>
 				</div>
@@ -127,7 +127,7 @@ function choose_search() {
           $("#choose_user_box").append(`
 
 
-              <mdui-list-item rounded onclick="choose_user_set(${d[i].id})" class='choose_item' id='choose_item_${d[i].id}'>${userlist[i].display_name}    <mdui-avatar slot="icon" src="${S3staticurl}/user/${userlist[i].images}">
+              <mdui-list-item rounded onclick="choose_user_set(${d[i].id})" class='choose_item' id='choose_item_${d[i].id}'>${userlist[i].display_name}    <mdui-avatar slot="icon" src="${S3url}/user/${userlist[i].images}">
 </mdui-avatar> <span slot="description">${userlist[i].motto}</span>
 </mdui-list-item>
 
@@ -153,7 +153,7 @@ function choose_user_set(id) {
   useritem = userlist.find((item) => item.id === id);
   $("#open_choose_user").html(`
 
-    <mdui-list-item rounded  active>${useritem.display_name}    <mdui-avatar slot="icon" src="${S3staticurl}/user/${useritem.images}">
+    <mdui-list-item rounded  active>${useritem.display_name}    <mdui-avatar slot="icon" src="${S3url}/user/${useritem.images}">
 </mdui-avatar> <span slot="description">${useritem.motto}</span>
 </mdui-list-item>`);
 }

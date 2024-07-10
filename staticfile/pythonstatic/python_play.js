@@ -66,7 +66,7 @@ function show_python_userinfo(work) {
   document.querySelector('#authorinfo').setAttribute('headline', work.display_name);
   document.querySelector('#authorinfo').setAttribute('description',work.motto);
   document.querySelector('#authorinfo').setAttribute('href','/user.html?id=' + work.id);
-  document.querySelector('#authoravatar').setAttribute('src', S3staticurl+'/user/'+work.images);
+  document.querySelector('#authoravatar').setAttribute('src', S3url+'/user/'+work.images);
 
 }
 //用一个作品数据初始化界面

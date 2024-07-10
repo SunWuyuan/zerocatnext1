@@ -7,12 +7,12 @@ function userinfo() {
     try {
       const token = Cookies.get("token");
       const decoded = jwtDecode(token);
-
-      $(".ow-email").text(decoded.email);
+      localStorage.setItem('token',token);
+            $(".ow-email").text(decoded.email);
       $(".ow-userlink").attr("href", "/user.html?id=" + decoded.userid);
       $(".ow-usernick").text(decoded.display_name);
       $(".ow-userid").text(decoded.userid);
-      $(".ow-useravatar").attr("src", "/api/usertx?id=" + decoded.userid);
+      $(".ow-useravatar").attr("src", S3url+"/user/" + decoded.avatar);
       $(".ow-useravatar").attr("alt", decoded.display_name);
       Cookies.set("local-userid", decoded.userid);
 
@@ -24,7 +24,8 @@ function userinfo() {
   }
   if (Cookies.get("token") == undefined) {
     try {
-      document.getElementById("user-drawer-list").innerHTML =
+      localStorage.setItem('token','')
+            document.getElementById("user-drawer-list").innerHTML =
         '<mdui-list-item rounded href="/user/login.html">注册</mdui-list-item> <mdui-list-item rounded href="/user/login.html">登录</mdui-list-item><mdui-list-item rounded class="close-user" icon="arrow_left">关闭</mdui-list-item>';
 
       const UserDrawer = document.querySelector(".user-drawer");

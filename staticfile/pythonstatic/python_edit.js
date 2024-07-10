@@ -412,7 +412,7 @@ function open_YX() {
 <div class="mdui-card" style="margin:5px 0px 5px 0px;border-radius: 15px;">
 
  <div class="mdui-card-header" >
-    <img class="mdui-card-header-avatar" src="${S3staticurl}/user/${p.authorid}"/>
+    <img class="mdui-card-header-avatar" src="${S3url}/user/${p.authorid}"/>
     <div class="mdui-card-header-title">${p.author_display_name}</div>
     <div class="mdui-card-header-subtitle">ZeroCat创作者</div>
   </div>

@@ -75,7 +75,7 @@
         </mdui-list-item>
         <mdui-list-item rounded href="/my/scratch" description="管理Scratch作品">Scratch</mdui-list-item>
         <mdui-list-item rounded href="/my/python" description="管理Python作品">Python</mdui-list-item>
-        <mdui-list-item rounded href="/my/info" description="管理个人信息">个人信息</mdui-list-item>
+        <mdui-list-item rounded href="/my/info.html" description="管理个人信息">个人信息</mdui-list-item>
         <mdui-list-item rounded href="/user/logout" description="退出此账户">退出</mdui-list-item>
 
         <mdui-list-item rounded class="close-user" icon="arrow_left">关闭</mdui-list-item>
@@ -445,7 +445,7 @@
 staticurl='/staticfile'
 
 Ow_Server='http://localhost:3000'
-  S3staticurl = "https://s4-1.wuyuan.1r.ink"
+  S3url = "https://s4-1.wuyuan.1r.ink"
   editorurl='http://localhost:8601'
 </script>
 <script src="/staticfile/js/js-cookie.js"></script>
@@ -471,7 +471,7 @@ Ow_Server='http://localhost:3000'
 				var $config = {
 					title: _work_title,
 					description: `${_work_title} 是ZeroCat社区上的Python作品`,
-					image: `<%= process.env.S3staticurl%>/scratch_slt/${_work_id}`,
+					image: `<%= process.env.S3url%>/scratch_slt/${_work_id}`,
 					wechatqrcodeTitle: "微信扫一扫分享",
 					wechatqrcodeHelper: '<p>打开扫一扫</p><p>在手机上打开即可分享至朋友圈。</p>',
 				};

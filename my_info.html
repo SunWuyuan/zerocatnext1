@@ -75,7 +75,7 @@
         </mdui-list-item>
         <mdui-list-item rounded href="/my/scratch" description="管理Scratch作品">Scratch</mdui-list-item>
         <mdui-list-item rounded href="/my/python" description="管理Python作品">Python</mdui-list-item>
-        <mdui-list-item rounded href="/my/info" description="管理个人信息">个人信息</mdui-list-item>
+        <mdui-list-item rounded href="/my/info.html" description="管理个人信息">个人信息</mdui-list-item>
         <mdui-list-item rounded href="/user/logout" description="退出此账户">退出</mdui-list-item>
 
         <mdui-list-item rounded class="close-user" icon="arrow_left">关闭</mdui-list-item>
@@ -289,12 +289,12 @@
 			<mdui-button class="open-captchadialog" variant="tonal">完成验证码</mdui-button>
 
 			<div style="float: right">
-				<mdui-button href="/my/info">取消</mdui-button>
+				<mdui-button href="/my/info.html">取消</mdui-button>
 				<mdui-button onclick="updataInfo()">确认</mdui-button>
 			</div>
 		</mdui-tab-panel>
 		<mdui-tab-panel slot="panel" value="tab-2"><br />
-			<img class="mdui-img-circle mdui-m-l-2" src="/api/usertx?id=<%= userid %>"
+			<img class="mdui-img-circle mdui-m-l-2 ow-useravatar"
 				style="height: 100px; width: auto; border-radius: 15px" />
 			<br />
 			<br />
@@ -476,7 +476,7 @@
 staticurl='/staticfile'
 
 Ow_Server='http://localhost:3000'
-  S3staticurl = "https://s4-1.wuyuan.1r.ink"
+  S3url = "https://s4-1.wuyuan.1r.ink"
   editorurl='http://localhost:8601'
 </script>
 <script src="/staticfile/js/js-cookie.js"></script>

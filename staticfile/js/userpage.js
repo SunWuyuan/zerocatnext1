@@ -32,7 +32,7 @@ function loaduserinfo() {
         $("#mainuserdisplay_name").html(DOMPurify.sanitize(data.info.display_name));
 
         $("#usermotto").html(DOMPurify.sanitize(marked.parse(data.info.motto)));
-        $("#mainuserimages").attr('src',S3staticurl+'/user/'+data.info.images);
+        $("#mainuserimages").attr('src',S3url+'/user/'+data.info.images);
         $("#regTime").html(FormatTime('yyyy-MM-dd',data.info.regTime)+'注册');
         $("#tag").html(data.info.tag);
 
