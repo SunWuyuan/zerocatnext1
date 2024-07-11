@@ -7,7 +7,7 @@
   <title>
     ZeroCat社区
   </title>
-  <link rel="shortcut icon" href="/static/img/siteicon.png">
+  <link rel="shortcut icon" href="/assets/images/siteicon.png">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta charset="UTF-8">
 
@@ -24,11 +24,11 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="format-detection" content="date=no">
   <meta name="format-detection" content="address=no">
-  <meta content=”telephone=no” name=”format-detection” />
+
   <meta property="og:title" content="ZeroCat社区 - 新一代开源编程社区">
   <meta property="og:type" content="website">
   <meta property="og:url" content=" https://zerocat.wuyuan.dev">
-  <meta property="og:image" content="/static/img/toutu.png">
+  <meta property="og:image" content="/assets/images/toutu.png">
   <meta name="referrer" content="origin-when-cross-origin" />
   <link rel="preconnect" href="/static" />
   <link rel="preconnect" href="/static" crossorigin />
@@ -41,17 +41,17 @@
   <link rel="stylesheet" href="/static/mdui-v1.0.2/css/mdui.min.css" />
   <link rel="stylesheet" href="/static/mdui2/mdui.css" id="mdui_css">
   <link rel="stylesheet" href="/static/layui/css/layui.css">
-  <link rel="stylesheet" href="/static/css/projectspage.css">
-  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/css/projectspage.css">
+  <link rel="stylesheet" href="/css/main.css">
 
 
 
   <meta name="view-transition" content="same-origin">
   <link id="layui_theme_css" rel="stylesheet">
-  <script type="text/javascript" src="/static/page/main.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
 
-  <script type="text/javascript" src="/static/js/jquery.3.7.1.js"></script>
-  <!-- <%- process.env.html %> -->
+  <script type="text/javascript" src="/js/jquery.3.7.1.js"></script>
+  <!-- envhtml -->
 </head>
 <style>
   :not(:defined) {
@@ -211,7 +211,7 @@
     </mdui-top-app-bar>
 
 
-    <link href="/static/font1.css" rel="stylesheet">
+    <link href="/assets/fonts/materialfont/font1.css" rel="stylesheet">
 
     <script>// 控制台安全提示
       //window.console.log('%c%s', 'color: red; background: yellow; font-size: 72px;', '警告！');
@@ -255,7 +255,7 @@
         .addEventListener('click', () => appWindow.close())</script>
 
     <mdui-layout-main>
-      <div class="zc-container" style="border-radius: 15px;"><link href="/static/css/webpixels-1.2.6.css" rel="stylesheet" />
+      <div class="zc-container" style="border-radius: 15px;"><link href="/css/webpixels-1.2.6.css" rel="stylesheet" />
 
   <div>
 
@@ -270,7 +270,7 @@
 
 
             <div class="mx-n2">
-              <mdui-button variant="filled" href="/user/login.html">立刻加入</mdui-button>
+              <mdui-button variant="filled" href="/account/login.html">立刻加入</mdui-button>
               <mdui-button variant="elevated" href="/about">了解更多</mdui-button><mdui-list>
                 <mdui-list-item icon="people" description="qq群号964979747" href="https://qm.qq.com/q/wn3TkPoZ5C" active rounded >ZeroCat现由厚浪云提供支持</mdui-list-item>
 
@@ -285,7 +285,7 @@
               <span
                 class="d-none d-xl-block position-absolute bottom-0 end-0 transform translate-x-16 translate-y-16 w-32 h-32 bg-warning opacity-60 rounded-circle filter blur-50"></span>
 
-              <img alt="..." src="/static/img/toutu.png"
+              <img alt="..." src="/assets/images/toutu.png"
                 class="shadow-4 rounded-4 position-relative overlap-10" />
             </div>
           </div>-->
@@ -300,7 +300,7 @@
     <div class="mdui-col-xl-5 mdui-col-lg-5 mdui-col-md-6 mdui-col-sm-6 mdui-col-xs-12">
       <mdui-card href="/scratch" variant="filled" clickable ondragstart="return false" class="background-color">
         <mdui-card>
-          <img src="/static/img/owscratch.png" style="pointer-events: none; width: 100%" />
+          <img src="/assets/images/owscratch.png" style="pointer-events: none; width: 100%" />
         </mdui-card>
         <div style="padding: 16px">
           <div style="font-size: 24px">Scratch</div>
@@ -311,7 +311,7 @@
     <div class="mdui-col-xl-5 mdui-col-lg-5 mdui-col-md-6 mdui-col-sm-6 mdui-col-xs-12">
       <mdui-card href="/python" variant="filled" clickable ondragstart="return false" class="background-color">
         <mdui-card>
-          <img src="/static/img/owpython.png" style="pointer-events: none; width: 100%" />
+          <img src="/assets/images/owpython.png" style="pointer-events: none; width: 100%" />
         </mdui-card>
         <div style="padding: 16px">
           <div style="font-size: 24px">Python</div>
@@ -403,7 +403,7 @@ $(function () {
                 <a href="/about" class="btn btn-light shadow-sm mx-2 px-lg-8">
                   了解更多
                 </a>
-                <a href="/user/login.html" class="btn btn-primary shadow-sm mx-2 px-lg-8">
+                <a href="/account/login.html" class="btn btn-primary shadow-sm mx-2 px-lg-8">
                   ZeroCat，启动！
                 </a>
               </div>
@@ -534,8 +534,8 @@ $(function () {
 
 <script type="text/javascript" src="/static/layui/layui.all.js"></script>
 <script src="/static/mdui2/mdui.global.js"></script>
-<script type="text/javascript" src="/static/js/main.js"></script>
-<script type="text/javascript" src="/static/page/main.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 
 
 <script>
@@ -552,54 +552,13 @@ $(function () {
 
   document.querySelector('mdui-navigation-rail').setAttribute('value', window.location.pathname);
 
-  const AddDialog = document.querySelector("#newproject");
-  const openAddButtons = document.querySelectorAll(".open-add");
-  openAddButtons.forEach(button => {
-    button.addEventListener("click", () => AddDialog.open = true);
-  });
-
-  const UserDrawer = document.querySelector(".user-drawer");
-  const openUserButton = document.querySelectorAll(".open-user");
-  const closeUserButton = document.querySelector(".close-user");
-  openUserButton.forEach(button => {
-    button.addEventListener("click", () => UserDrawer.open = true);
-  });
-  closeUserButton.addEventListener("click", () => UserDrawer.open = false);
-
-  const ToolsDrawer = document.querySelector(".tools-drawer");
-  const openToolsButton = document.querySelectorAll(".open-tools");
-  const closeToolsButton = document.querySelector(".close-tools");
-  openToolsButton.forEach(button => {
-    button.addEventListener("click", () => ToolsDrawer.open = true);
-  });
-  closeToolsButton.addEventListener("click", () => ToolsDrawer.open = false);
-
-  const SwitcDialog = document.querySelector(".switch-dialog");
-  const openanSwitcButton = document.querySelector(".open-switch");
-
-  openanSwitcButton.addEventListener("click", () => SwitcDialog.open = true);
-
-
-
-  const TypesDrawer = document.querySelector(".types-drawer");
-  const openTypesButton = document.querySelectorAll(".open-types");
-  const closeTypesButton = document.querySelector(".close-types");
-  openTypesButton.forEach(button => {
-    button.addEventListener("click", () => TypesDrawer.open = true);
-  });
-  closeTypesButton.addEventListener("click", () => TypesDrawer.open = false);
-
-  const FeedBackDialog = document.querySelector(".feedback-dialog");
-  const openanFeedBackButtons = document.querySelectorAll(".zc-feedback");
-
-  openanFeedBackButtons.forEach(button => { button.addEventListener("click", () => { FeedBackDialog.open = true }); });
 
   if (localStorage.darkTheme) {
     document.body.classList.add("mdui-theme-layout-dark");
     document.body.classList.add("mdui-theme-dark");
     document.documentElement.classList.add("mdui-theme-dark");
     document.body.setAttribute("dark", "");
-    $("#layui_theme_css").attr("href", "/static/css/layui-theme-dark.css");
+    $("#layui_theme_css").attr("href", "/css/layui-theme-dark.css");
   }
   document.getElementById("switch-theme").addEventListener("click", () => {
     document.body.classList.toggle("mdui-theme-layout-dark");
@@ -608,7 +567,7 @@ $(function () {
     document.body.toggleAttribute("dark");
     if (document.body.hasAttribute("dark")) {
       localStorage.darkTheme = true;
-      $("#layui_theme_css").attr("href", "/static/css/layui-theme-dark.css");
+      $("#layui_theme_css").attr("href", "/css/layui-theme-dark.css");
     } else {
       delete localStorage.darkTheme;
       $("#layui_theme_css").removeAttr("href");
@@ -645,8 +604,8 @@ $(function () {
 
   editorurl='http://localhost:8601'
 </script>
-<script src="/static/js/js-cookie.js"></script>
-<script src="/static/js/jwt-decode.js"></script>
+<script src="/js/js-cookie.js"></script>
+<script src="/js/jwt-decode.js"></script>
 
 
 </html>

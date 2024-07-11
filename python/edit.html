@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Python编程 - ZeroCat社区
   </title>
-  <link rel="shortcut icon" href='/static/img/siteicon.png'>
-  <link rel="stylesheet" href='/static/pythonstatic/css/style.css' />
-  <link type="text/css" rel="stylesheet" href="/static/pythonstatic/showWorks.css" />
+  <link rel="shortcut icon" href='/assets/images/siteicon.png'>
+  <link rel="stylesheet" href='/python/pythoneditstatic/css/style.css' />
+  <link type="text/css" rel="stylesheet" href="/python/pythoneditstatic/showWorks.css" />
   <link rel="stylesheet" href="/static/mdui-v1.0.2/css/mdui.min.css" />
   <link id="layui_theme_css" rel="stylesheet">
   <link rel="stylesheet" href="/static/layui/css/layui.css">
-  <link rel="stylesheet" href="/static/css/projectspage.css">
-  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/css/projectspage.css">
+  <link rel="stylesheet" href="/css/main.css">
   <script type="text/javascript" src="/config.js"></script>
   <script>
 
@@ -22,13 +22,13 @@
 
       editorurl='http://localhost:8601'
     </script>
-  <script src="/static/js/js-cookie.js"></script>
-  <script type="text/javascript" src="/static/js/main.js"></script>
+  <script src="/js/js-cookie.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
 
 
   <script src="/static/mdui-v1.0.2/js/mdui.min.js"></script>
 
-  <script src="/static/js/jquery.3.7.1.js"></script>
+  <script src="/js/jquery.3.7.1.js"></script>
   <script>
 
 
@@ -45,7 +45,7 @@
   </script>
 
   <link rel="stylesheet" data-name="vs/editor/editor.main"
-    href="/static/pythonstatic/vs/editor/editor.main.css" />
+    href="/python/pythoneditstatic/vs/editor/editor.main.css" />
 </head>
 
 <body class="mdui-theme-light mdui-theme-accent-blue">
@@ -157,7 +157,7 @@
             <div class="">
               <div class="" style="padding: 0;">
                 <div id="canvas_box"
-                  style="height:calc(50vh);background:url(/*/static/pythonstatic/img/welcome_python_editor.png*/) no-repeat center;background-size: contain;background-size:auto 100%;">
+                  style="height:calc(50vh);background:url(/*/python/pythoneditstatic/img/welcome_python_editor.png*/) no-repeat center;background-size: contain;background-size:auto 100%;">
                   <div id="pythoncanvas"></div>
                 </div>
               </div>
@@ -227,29 +227,29 @@
 
 
 
-  <script>self.require = { paths: { 'vs': '/static/pythonstatic/vs' },'vs/nls': { availableLanguages: { '*': 'zh-cn' } } };</script>
+  <script>self.require = { paths: { 'vs': '/python/pythoneditstatic/vs' },'vs/nls': { availableLanguages: { '*': 'zh-cn' } } };</script>
 
-  <script src="/static/pythonstatic/vs/loader.js"></script>
-  <script src="/static/pythonstatic/vs/editor/editor.main.js"></script>
+  <script src="/python/pythoneditstatic/vs/loader.js"></script>
+  <script src="/python/pythoneditstatic/vs/editor/editor.main.js"></script>
 
 
 
-  <script type="text/javascript" src="/static/page/main.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
 
-  <script type="text/javascript" src="/static/js/jquery.3.7.1.js"></script>
-  <script type="text/javascript" src="/static/pythonstatic/js/file-saver.js"></script>
-  <script type="text/javascript" src="/static/pythonstatic/skulpt.min.js"></script>
-  <script type="text/javascript" src="/static/pythonstatic/skulpt-stdlib.js"></script>
-  <script type="text/javascript" src="/static/pythonstatic/mode/python.js"></script>
-  <script type="text/javascript" src="/static/pythonstatic/js/show-hint.js"></script>
+  <script type="text/javascript" src="/js/jquery.3.7.1.js"></script>
+  <script type="text/javascript" src="/python/pythoneditstatic/js/file-saver.js"></script>
+  <script type="text/javascript" src="/python/pythoneditstatic/skulpt.min.js"></script>
+  <script type="text/javascript" src="/python/pythoneditstatic/skulpt-stdlib.js"></script>
+  <script type="text/javascript" src="/python/pythoneditstatic/mode/python.js"></script>
+  <script type="text/javascript" src="/python/pythoneditstatic/js/show-hint.js"></script>
   <script type="text/javascript" src="/static/layui/layui.all.js"></script>
-  <script type="text/javascript" src="/static/pythonstatic/public.js"></script>
+  <script type="text/javascript" src="/python/pythoneditstatic/public.js"></script>
 
-  <script type="text/javascript" src="/static/pythonstatic/python_edit.js"></script>
+  <script type="text/javascript" src="/python/pythoneditstatic/python_edit.js"></script>
 </body>
 
 </html>
-<script>S3url = 'https://s4-1.wuyuan.1r.ink'
+<script>config.s3url = 'https://s4-1.wuyuan.1r.ink'
   static = '/static'
   window.static = '/static'</script>
 <script>if (localStorage.darkTheme) {
@@ -257,7 +257,7 @@
     document.body.classList.add("mdui-theme-dark");
     document.documentElement.classList.add("mdui-theme-dark");
     document.body.setAttribute("dark", "");
-    $("#layui_theme_css").attr("href", "/static/css/layui-theme-dark.css");
+    $("#layui_theme_css").attr("href", "/css/layui-theme-dark.css");
   }
   document.getElementById("switch-theme").addEventListener("click", () => {
     document.body.classList.toggle("mdui-theme-layout-dark");
@@ -266,7 +266,7 @@
     document.body.toggleAttribute("dark");
     if (document.body.hasAttribute("dark")) {
       localStorage.darkTheme = true;
-      $("#layui_theme_css").attr("href", "/static/css/layui-theme-dark.css");
+      $("#layui_theme_css").attr("href", "/css/layui-theme-dark.css");
     } else {
       delete localStorage.darkTheme;
       $("#layui_theme_css").removeAttr("href");
@@ -279,12 +279,12 @@
 
 </script>
 
-<script src="/static/js/jwt-decode.js"></script>
+<script src="/js/jwt-decode.js"></script>
 <script>
   $(function () {
     if (!Cookies.get('token')) {
 
-        window.location.href = '/user/login.html';
+        window.location.href = '/account/login.html';
       }
 
   })
@@ -292,4 +292,4 @@
 </script>
 
 
-<script type="text/javascript" src="/static/page/main.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>

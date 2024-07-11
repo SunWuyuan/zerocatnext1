@@ -7,7 +7,7 @@
   <title>
     ZeroCat社区
   </title>
-  <link rel="shortcut icon" href="/static/img/siteicon.png">
+  <link rel="shortcut icon" href="/assets/images/siteicon.png">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta charset="UTF-8">
 
@@ -24,11 +24,11 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="format-detection" content="date=no">
   <meta name="format-detection" content="address=no">
-  <meta content=”telephone=no” name=”format-detection” />
+
   <meta property="og:title" content="ZeroCat社区 - 新一代开源编程社区">
   <meta property="og:type" content="website">
   <meta property="og:url" content=" https://zerocat.wuyuan.dev">
-  <meta property="og:image" content="/static/img/toutu.png">
+  <meta property="og:image" content="/assets/images/toutu.png">
   <meta name="referrer" content="origin-when-cross-origin" />
   <link rel="preconnect" href="/static" />
   <link rel="preconnect" href="/static" crossorigin />
@@ -42,17 +42,17 @@
   <link rel="stylesheet" href="/static/mdui-v1.0.2/css/mdui.min.css" />
   <link rel="stylesheet" href="/static/mdui2/mdui.css" id="mdui_css">
   <link rel="stylesheet" href="/static/layui/css/layui.css">
-  <link rel="stylesheet" href="/static/css/projectspage.css">
-  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/css/projectspage.css">
+  <link rel="stylesheet" href="/css/main.css">
 
 
 
   <meta name="view-transition" content="same-origin">
   <link id="layui_theme_css" rel="stylesheet">
-  <script type="text/javascript" src="/static/page/main.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
 
-  <script type="text/javascript" src="/static/js/jquery.3.7.1.js"></script>
-  <!-- <%- process.env.html %> -->
+  <script type="text/javascript" src="/js/jquery.3.7.1.js"></script>
+  <!-- envhtml -->
 </head>
 <style>
   :not(:defined) {
@@ -213,7 +213,7 @@
     </mdui-top-app-bar>
 
 
-    <link href="/static/font1.css" rel="stylesheet">
+    <link href="/assets/fonts/materialfont/font1.css" rel="stylesheet">
 
     <script>// 控制台安全提示
       //window.console.log('%c%s', 'color: red; background: yellow; font-size: 72px;', '警告！');
@@ -348,8 +348,8 @@
 
 <script type="text/javascript" src="/static/layui/layui.all.js"></script>
 <script src="/static/mdui2/mdui.global.js"></script>
-<script type="text/javascript" src="/static/js/main.js"></script>
-<script type="text/javascript" src="/static/page/main.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 
 
 <script>
@@ -366,54 +366,13 @@
 
   document.querySelector('mdui-navigation-rail').setAttribute('value', window.location.pathname);
 
-  const AddDialog = document.querySelector("#newproject");
-  const openAddButtons = document.querySelectorAll(".open-add");
-  openAddButtons.forEach(button => {
-    button.addEventListener("click", () => AddDialog.open = true);
-  });
-
-  const UserDrawer = document.querySelector(".user-drawer");
-  const openUserButton = document.querySelectorAll(".open-user");
-  const closeUserButton = document.querySelector(".close-user");
-  openUserButton.forEach(button => {
-    button.addEventListener("click", () => UserDrawer.open = true);
-  });
-  closeUserButton.addEventListener("click", () => UserDrawer.open = false);
-
-  const ToolsDrawer = document.querySelector(".tools-drawer");
-  const openToolsButton = document.querySelectorAll(".open-tools");
-  const closeToolsButton = document.querySelector(".close-tools");
-  openToolsButton.forEach(button => {
-    button.addEventListener("click", () => ToolsDrawer.open = true);
-  });
-  closeToolsButton.addEventListener("click", () => ToolsDrawer.open = false);
-
-  const SwitcDialog = document.querySelector(".switch-dialog");
-  const openanSwitcButton = document.querySelector(".open-switch");
-
-  openanSwitcButton.addEventListener("click", () => SwitcDialog.open = true);
-
-
-
-  const TypesDrawer = document.querySelector(".types-drawer");
-  const openTypesButton = document.querySelectorAll(".open-types");
-  const closeTypesButton = document.querySelector(".close-types");
-  openTypesButton.forEach(button => {
-    button.addEventListener("click", () => TypesDrawer.open = true);
-  });
-  closeTypesButton.addEventListener("click", () => TypesDrawer.open = false);
-
-  const FeedBackDialog = document.querySelector(".feedback-dialog");
-  const openanFeedBackButtons = document.querySelectorAll(".zc-feedback");
-
-  openanFeedBackButtons.forEach(button => { button.addEventListener("click", () => { FeedBackDialog.open = true }); });
 
   if (localStorage.darkTheme) {
     document.body.classList.add("mdui-theme-layout-dark");
     document.body.classList.add("mdui-theme-dark");
     document.documentElement.classList.add("mdui-theme-dark");
     document.body.setAttribute("dark", "");
-    $("#layui_theme_css").attr("href", "/static/css/layui-theme-dark.css");
+    $("#layui_theme_css").attr("href", "/css/layui-theme-dark.css");
   }
   document.getElementById("switch-theme").addEventListener("click", () => {
     document.body.classList.toggle("mdui-theme-layout-dark");
@@ -422,7 +381,7 @@
     document.body.toggleAttribute("dark");
     if (document.body.hasAttribute("dark")) {
       localStorage.darkTheme = true;
-      $("#layui_theme_css").attr("href", "/static/css/layui-theme-dark.css");
+      $("#layui_theme_css").attr("href", "/css/layui-theme-dark.css");
     } else {
       delete localStorage.darkTheme;
       $("#layui_theme_css").removeAttr("href");
@@ -459,30 +418,30 @@
 
   editorurl = 'http://localhost:8601'
 </script>
-<script src="/static/js/js-cookie.js"></script>
-<script src="/static/js/jwt-decode.js"></script>
+<script src="/js/js-cookie.js"></script>
+<script src="/js/jwt-decode.js"></script>
 
 
 </html>
-<script type="text/javascript" src="/static/js/social-share.js"></script>
-<link rel="stylesheet" href="/static/css/social-share.css" />
-<script type="text/javascript" src="/static/pythonstatic/CodeMirror.js"></script>
-<script type="text/javascript" src="/static/pythonstatic/js/file-saver.js"></script>
-<script type="text/javascript" src="/static/pythonstatic/skulpt.min.js"></script>
-<script type="text/javascript" src="/static/pythonstatic/skulpt-stdlib.js"></script>
-<script type="text/javascript" src="/static/pythonstatic/mode/python.js"></script>
-<script type="text/javascript" src="/static/pythonstatic/js/show-hint.js"></script>
+<script type="text/javascript" src="/js/social-share.js"></script>
+<link rel="stylesheet" href="/css/social-share.css" />
+<script type="text/javascript" src="/python/pythoneditstatic/CodeMirror.js"></script>
+<script type="text/javascript" src="/python/pythoneditstatic/js/file-saver.js"></script>
+<script type="text/javascript" src="/python/pythoneditstatic/skulpt.min.js"></script>
+<script type="text/javascript" src="/python/pythoneditstatic/skulpt-stdlib.js"></script>
+<script type="text/javascript" src="/python/pythoneditstatic/mode/python.js"></script>
+<script type="text/javascript" src="/python/pythoneditstatic/js/show-hint.js"></script>
 <script type="text/javascript" src="/static/layui/layui.all.js"></script>
-<script type="text/javascript" src="/static/pythonstatic/public.js"></script>
+<script type="text/javascript" src="/python/pythoneditstatic/public.js"></script>
 
 
-<script type="text/javascript" src="/static/pythonstatic/python_play.js"></script>
+<script type="text/javascript" src="/python/pythoneditstatic/python_play.js"></script>
 <script>
 
   var $config = {
     title: _work_title,
     description: `${_work_title} 是ZeroCat社区上的Python作品`,
-    image: `<%= process.env.S3url%>/scratch_slt/${_work_id}`,
+    image: `<%= process.env.config.s3url%>/scratch_slt/${_work_id}`,
     wechatqrcodeTitle: "微信扫一扫分享",
     wechatqrcodeHelper: '<p>打开扫一扫</p><p>在手机上打开即可分享至朋友圈。</p>',
   };

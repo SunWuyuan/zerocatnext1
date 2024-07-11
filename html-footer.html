@@ -5,8 +5,8 @@
 
 <script type="text/javascript" src="/static/layui/layui.all.js"></script>
 <script src="/static/mdui2/mdui.global.js"></script>
-<script type="text/javascript" src="/static/js/main.js"></script>
-<script type="text/javascript" src="/static/page/main.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 
 
 <script>
@@ -23,54 +23,13 @@
 
   document.querySelector('mdui-navigation-rail').setAttribute('value', window.location.pathname);
 
-  const AddDialog = document.querySelector("#newproject");
-  const openAddButtons = document.querySelectorAll(".open-add");
-  openAddButtons.forEach(button => {
-    button.addEventListener("click", () => AddDialog.open = true);
-  });
-
-  const UserDrawer = document.querySelector(".user-drawer");
-  const openUserButton = document.querySelectorAll(".open-user");
-  const closeUserButton = document.querySelector(".close-user");
-  openUserButton.forEach(button => {
-    button.addEventListener("click", () => UserDrawer.open = true);
-  });
-  closeUserButton.addEventListener("click", () => UserDrawer.open = false);
-
-  const ToolsDrawer = document.querySelector(".tools-drawer");
-  const openToolsButton = document.querySelectorAll(".open-tools");
-  const closeToolsButton = document.querySelector(".close-tools");
-  openToolsButton.forEach(button => {
-    button.addEventListener("click", () => ToolsDrawer.open = true);
-  });
-  closeToolsButton.addEventListener("click", () => ToolsDrawer.open = false);
-
-  const SwitcDialog = document.querySelector(".switch-dialog");
-  const openanSwitcButton = document.querySelector(".open-switch");
-
-  openanSwitcButton.addEventListener("click", () => SwitcDialog.open = true);
-
-
-
-  const TypesDrawer = document.querySelector(".types-drawer");
-  const openTypesButton = document.querySelectorAll(".open-types");
-  const closeTypesButton = document.querySelector(".close-types");
-  openTypesButton.forEach(button => {
-    button.addEventListener("click", () => TypesDrawer.open = true);
-  });
-  closeTypesButton.addEventListener("click", () => TypesDrawer.open = false);
-
-  const FeedBackDialog = document.querySelector(".feedback-dialog");
-  const openanFeedBackButtons = document.querySelectorAll(".zc-feedback");
-
-  openanFeedBackButtons.forEach(button => { button.addEventListener("click", () => { FeedBackDialog.open = true }); });
 
   if (localStorage.darkTheme) {
     document.body.classList.add("mdui-theme-layout-dark");
     document.body.classList.add("mdui-theme-dark");
     document.documentElement.classList.add("mdui-theme-dark");
     document.body.setAttribute("dark", "");
-    $("#layui_theme_css").attr("href", "/static/css/layui-theme-dark.css");
+    $("#layui_theme_css").attr("href", "/css/layui-theme-dark.css");
   }
   document.getElementById("switch-theme").addEventListener("click", () => {
     document.body.classList.toggle("mdui-theme-layout-dark");
@@ -79,7 +38,7 @@
     document.body.toggleAttribute("dark");
     if (document.body.hasAttribute("dark")) {
       localStorage.darkTheme = true;
-      $("#layui_theme_css").attr("href", "/static/css/layui-theme-dark.css");
+      $("#layui_theme_css").attr("href", "/css/layui-theme-dark.css");
     } else {
       delete localStorage.darkTheme;
       $("#layui_theme_css").removeAttr("href");
@@ -116,8 +75,8 @@
 
   editorurl='http://localhost:8601'
 </script>
-<script src="/static/js/js-cookie.js"></script>
-<script src="/static/js/jwt-decode.js"></script>
+<script src="/js/js-cookie.js"></script>
+<script src="/js/jwt-decode.js"></script>
 
 
 </html>

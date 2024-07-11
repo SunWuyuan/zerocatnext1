@@ -1,8 +1,9 @@
-  var config = {
+var config = {
     "s3url": "https://s4-1.wuyuan.1r.ink",
-    "editorurl": "https://zerocat-static.houlangs.com/scratchguifile",
-    "server": "https://zerocat.houlangs.com"
+    "editorurl": "http://localhost:8601",
+    "server": "http://localhost:3000"
   }
+
 window.config=config
 staticurl=config.s3url
 Ow_Server=config.server
