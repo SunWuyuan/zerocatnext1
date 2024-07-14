@@ -36,17 +36,17 @@ function loaduserinfo(load) {
 
     AjaxGet("/api/getuserinfo", {id:getQueryString("id")}, function (data) {
       console.log(data.info);
-      $("#mainuserdisplay_name").html(DOMPurify.sanitize(data.info.display_name));
+      $("#mainuserdisplay_name").html(DOMPurify.sanitize(data.info.user.display_name));
 
-      $("#usermotto").html(DOMPurify.sanitize(marked.parse(data.info.motto)));
+      $("#usermotto").html(DOMPurify.sanitize(marked.parse(data.info.user.motto)));
       $("#mainuserimages").attr(
         "src",
-        config.s3url + "/user/" + data.info.images
+        config.s3url + "/user/" + data.info.user.images
       );
-      $("#regTime").html(FormatTime("yyyy-MM-dd", data.info.regTime) + "注册");
-      $("#tag").html(data.info.tag);
-      scratch_count = data.info.scratch_count,
-      python_count = data.info.python_count
+      $("#regTime").html(FormatTime("yyyy-MM-dd", data.info.user.regTime) + "注册");
+      $("#tag").html(data.info.user.tag);
+      scratch_count = data.info.count.scratchcount,
+      python_count = data.info.count.pythoncount
       load()
         });
 
