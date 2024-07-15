@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 
@@ -257,268 +258,194 @@
 
     <mdui-layout-main>
       <div class="zc-container" style="border-radius: 15px;">
+<% if (login) { %>
+  <script>window.location.href = '/';</script>
+  <% } %>
+
+          <div class="layui-row">
+
+            <style>
+              .title:after {
+                content: "";
+                display: block;
+                height: 4px;
+                width: 40px;
+                background-color: #448aff;
+                margin-top: 20px;
+              }
+            </style>
+
+            <div class="layui-col-md6" style="padding: 30px 0 0 30px;">
+              <div id='login-page'>
+                <div class="mdui-typo-display-2">
+                  重设密码
+                </div>
+
+                <div class="reply-form" style="height: max-content;">
 
 
-  <div class="layui-row">
+                  <mdui-text-field variant="filled" label="密码" id='password' type="password" toggle-password
+                  style="margin-bottom: 10px;"></mdui-text-field>
 
-    <style>
-      .title:after {
-        content: "";
-        display: block;
-        height: 4px;
-        width: 40px;
-        background-color: #448aff;
-        margin-top: 20px;
-      }
-    </style>
-
-    <div class="layui-col-md6" style="padding: 30px 0 0 0px;">
-      <div id='login-page'>
-        <div class="mdui-typo-display-2">
-          ZeroCat社区 登录
-        </div>
-
-        <div class="reply-form" style="height: max-content;">
-          <div>
-            <mdui-text-field variant="filled" label="邮箱" id='email' type="email" autocomplete="on" name="email"
-              style="margin-bottom: 10px;"></mdui-text-field>
-            <mdui-text-field variant="filled" label="密码" id='password' type="password" toggle-password name="password"
-              autocomplete="on" style="margin-bottom: 10px;"></mdui-text-field>
-
-            <mdui-button class="open-captchadialog" variant="tonal">完成验证码</mdui-button>
+                  <div id="recaptcha-div-rePW-page">验证码加载中</div>
 
 
 
 
-            <div style="display:flex; height: 50px;">
+                  <button type="button" onclick="torepw()" class="mdui-btn mdui-color-theme-accent mdui-ripple"
+                    style="width: 120px;border-radius: 12px;">重设密码</button>
 
-                <mdui-button variant="text" onclick="switchPage('reg-page')">注册账户</mdui-button>
+                  <div>
+                  </div>
+                </div>
+              </div>
 
-                  <mdui-button variant="text" onclick="switchPage('getPW-page')">忘记密码</mdui-button>
-            </div>
-            <mdui-button onclick="login()">登录</mdui-button>
-          </div>
-          <div>
-          </div>
-        </div>
-      </div>
-
-      <div id='reg-page' style="display: none;">
-        <div class="mdui-typo-display-2">
-          ZeroCat社区 注册
-        </div>
-        <div class="reply-form" style="height: max-content;">
-
-
-          <div>
-            <mdui-text-field variant="filled" label="邮箱" id='reg_email' type="email"
-              style="margin-bottom: 10px;"></mdui-text-field>
-            <mdui-text-field variant="filled" label="昵称" id='reg_password' type="text"
-              style="margin-bottom: 10px;"></mdui-text-field>
-
-            <mdui-button class="open-captchadialog" variant="tonal">完成验证码</mdui-button>
-            <div style="display:flex; height: 50px;">
-              <mdui-button variant="text" onclick="switchPage('login-page')">去登录</mdui-button>
 
             </div>
 
 
 
-            <mdui-button type="button" mdui-dialog="{target: '#privacy'}">注册</mdui-button>
-
           </div>
-          <div>
-          </div>
+
         </div>
-      </div>
-      <div id='getPW-page' style="display: none;">
-        <div class="mdui-typo-display-2">
-          ZeroCat社区 找回密码
-        </div>
-        <div class="reply-form" style="height: max-content;">
-          <div>
-            <mdui-text-field variant="filled" label="邮箱" id='getPW_email' type="email"
-              style="margin-bottom: 10px;"></mdui-text-field>
-            <mdui-button class="open-captchadialog" variant="tonal">完成验证码</mdui-button>
-            <br /><br />
-            <mdui-button onclick="getPW()">找回密码</mdui-button>
-            <mdui-button onclick="switchPage('login-page')" variant="text">去登录</mdui-button>
-          </div>
-        </div>
-      </div>
-    </div>
+      </mdui-layout-main></mdui-layout>
+      </body>
 
 
-
-  </div>
-  </div>
-  </body>
-
-  <div class="mdui-dialog" id="privacy" style='border-radius: 15px;'>
-    <div class="mdui-dialog-title">您正在使用由孙悟元提供的服务</div>
-    <div class="mdui-dialog-content">
-      我们可能会收集您的个人信息,具体参见<a href="<%= process.env.SitePrivacyPolicy %>" target="_blank"
-        class="mdui-text-color-blue">隐私策略</a><br />
-      <label class="mdui-checkbox">
-        <input type="checkbox" id="privacy-chick" />
-        <i class="mdui-checkbox-icon"></i>
-        我已阅读并同意隐私策略
-      </label>
-      <br /><br />
-      <!--我们可能需要将您的个人数据传输到中国以外的国家或地区以提供服务,我们将采取必要措施确保您的数据得到安全和合法处理。-->
-      我们将在中国大陆安全的存储您的数据，我们暂不提供自助删除您的个人数据，如果您希望删除您的数据，您需要优先选择联系我们<br />
-      <label class="mdui-checkbox">
-        <input type="checkbox" id="shuju-chick" />
-        <i class="mdui-checkbox-icon"></i>
-        我理解并同意我无法自助删除我的个人数据，在需要时我会主动联系管理员删除
-      </label>
-      <br /><br />
-      在ZeroCat社区上,你需要遵守<a href="https://scratch.mit.edu/community_guidelines" target="_blank"
-          class="mdui-text-color-blue">社区行为准则(第三方站点)</a><br />
-        <label class="mdui-checkbox">
-          <input type="checkbox" id="zhunze-chick" />
-          <i class="mdui-checkbox-icon"></i>
-          我已阅读并同意将会遵守社区行为准则
-        </label>
-        <br /><br />
-        你需要同意<a href="<%= process.env.SiteTermsofService %>" target="_blank" class="mdui-text-color-blue">用户协议</a><br />
-        <label class="mdui-checkbox">
-          <input type="checkbox" id="xiugai-chick" />
-          <i class="mdui-checkbox-icon"></i>
-          我已阅读并同意用户协议
-        </label>
-        <br /><br />对于技术手段绕过此页面的行为(视为对ZeroCat社区
-          的基础设施进行攻击)涉嫌违法(非法入侵计算机系统),我们将保留追究法律责任的权利,且违规获得的账号不受保护,如果您同意以上内容,请点击“复选框”以完成注册流程.
-    </div>
-
-    <div class="mdui-dialog-actions">
-      <button class="mdui-btn mdui-ripple mdui-text-color-theme-text" mdui-dialog-close
-        style='border-radius: 15px;'>取消</button>
-      <button class="mdui-btn mdui-ripple mdui-text-color-theme-text" style='border-radius: 15px;'
-        onclick="register()">注册</button>
-    </div>
-  </div>
-  <mdui-dialog close-on-overlay-click close-on-esc class="captchadialog">
-    <span slot="headline">请完成验证码</span>
-    <span slot="description">部分地区加载可能较慢，请耐心等待。</span>
-    <div id="captcha-div"></div>
-
-    <mdui-button slot="action" variant="text" class="zc-feedback">反馈</mdui-button>
-    <mdui-button slot="action" variant="text" onclick="reloudcaptcha()">刷新</mdui-button>
-
-    <mdui-button slot="action" variant="tonal" class="close-captchadialog">完成</mdui-button>
-  </mdui-dialog>
+      <script type="text/javascript" src="/static/layui/layui.all.js"></script>
+      <script src="/static/mdui2/mdui.global.js"></script>
+      <script type="text/javascript" src="/js/main.js"></script>
+      <script type="text/javascript" src="/js/main.js"></script>
 
 
-  <script>
-    const captchadialog = document.querySelector(".captchadialog");
-    const opencaptchadialogButtons = document.querySelectorAll(".open-captchadialog");
-    const closecaptchadialogButton = document.querySelector(".close-captchadialog");
-    opencaptchadialogButtons.forEach(button => { button.addEventListener("click", () => { captchadialog.open = true }); });
-    closecaptchadialogButton.addEventListener("click", () => captchadialog.open = false);
-
-  </script>
-</div>
-</mdui-layout-main></mdui-layout>
-</body>
-
-
-<script type="text/javascript" src="/static/layui/layui.all.js"></script>
-<script src="/static/mdui2/mdui.global.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
-
-
-<script>
-  function automsg(msg) {
-    if (typeof msg === 'string') {
-      msg = { message: msg };
-    }
-    mdui.snackbar({
-      message: msg.message,
-      closeable: true,
-    });
-  }
-  mdui.setColorScheme('#2087fd');
-
-  document.querySelector('mdui-navigation-rail').setAttribute('value', window.location.pathname);
-
-
-  if (localStorage.darkTheme) {
-    document.body.classList.add("mdui-theme-layout-dark");
-    document.body.classList.add("mdui-theme-dark");
-    document.documentElement.classList.add("mdui-theme-dark");
-    document.body.setAttribute("dark", "");
-    $("#layui_theme_css").attr("href", "/css/layui-theme-dark.css");
-  }
-  document.getElementById("switch-theme").addEventListener("click", () => {
-    document.body.classList.toggle("mdui-theme-layout-dark");
-    document.body.classList.toggle("mdui-theme-dark");
-    document.documentElement.classList.toggle("mdui-theme-dark");
-    document.body.toggleAttribute("dark");
-    if (document.body.hasAttribute("dark")) {
-      localStorage.darkTheme = true;
-      $("#layui_theme_css").attr("href", "/css/layui-theme-dark.css");
-    } else {
-      delete localStorage.darkTheme;
-      $("#layui_theme_css").removeAttr("href");
-    }
-  });
-</script>
-
-<mdui-dialog id="webdialog" fullscreen width="1000">
-  <mdui-top-app-bar slot="header">
-    <mdui-button-icon icon="close" onclick="webdialog.open = false"></mdui-button-icon>
-    <mdui-top-app-bar-title></mdui-top-app-bar-title>
-    <div style="flex-grow: 1"></div>
-    <mdui-button-icon icon="fullscreen" onclick="webdialog.fullscreen = !webdialog.fullscreen "
-      id="webdialogfull"></mdui-button-icon>
-    <mdui-button-icon icon="open_in_new" onclick="window.open(`${webdialogiframe.src}`)"
-      id="webdialogfull"></mdui-button-icon>
-
-  </mdui-top-app-bar>
-  <iframe frameborder="0" id="webdialogiframe"
-    style="min-height: calc(100vh - 208px);min-width: 497px;width: 100%;border-radius: 15px;">
-    <p>
-      <a href="https://developer.mozilla.org/zh-CN/docs/Glossary">
-        此设备无法使用此功能
-      </a>
-    </p>
-  </iframe>
-</mdui-dialog>
-
-
-<script>
-
-
-
-
-  editorurl='http://localhost:8601'
-</script>
-<script src="/js/js-cookie.js"></script>
-<script src="/js/jwt-decode.js"></script>
-
-
-</html>    <script type="text/javascript" src="/js/gter.js"></script>
-    <script type="text/javascript" src="/js/login.js"></script>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?compat=recaptcha&onload=onloadCallback" async defer></script>
-    <script>rekey = '1x00000000000000000000AA'</script>
-    <script>
-      $(function () {
-        if (Cookies.get('token')) {
-          if (getQueryString('redirect') == 'editor') {
-            window.location.href = "http://localhost:8601/editor.html?token=" + Cookies.get('token');
-
-
-          } else {
-            window.location.href = '/';
+      <script>
+        function automsg(msg) {
+          if (typeof msg === 'string') {
+            msg = { message: msg };
           }
+          mdui.snackbar({
+            message: msg.message,
+            closeable: true,
+          });
         }
-      })
+        mdui.setColorScheme('#2087fd');
 
-      function getQueryString(name) {
-        const url_string = window.location.href;
-        const url = new URL(url_string);
-        return url.searchParams.get(name);
-      }
-    </script>
+        document.querySelector('mdui-navigation-rail').setAttribute('value', window.location.pathname);
+
+        const AddDialog = document.querySelector("#newproject");
+        const openAddButtons = document.querySelectorAll(".open-add");
+        openAddButtons.forEach(button => {
+          button.addEventListener("click", () => AddDialog.open = true);
+        });
+
+        const UserDrawer = document.querySelector(".user-drawer");
+        const openUserButton = document.querySelectorAll(".open-user");
+        const closeUserButton = document.querySelector(".close-user");
+        openUserButton.forEach(button => {
+          button.addEventListener("click", () => UserDrawer.open = true);
+        });
+        closeUserButton.addEventListener("click", () => UserDrawer.open = false);
+
+        const ToolsDrawer = document.querySelector(".tools-drawer");
+        const openToolsButton = document.querySelectorAll(".open-tools");
+        const closeToolsButton = document.querySelector(".close-tools");
+        openToolsButton.forEach(button => {
+          button.addEventListener("click", () => ToolsDrawer.open = true);
+        });
+        closeToolsButton.addEventListener("click", () => ToolsDrawer.open = false);
+
+        const SwitcDialog = document.querySelector(".switch-dialog");
+        const openanSwitcButton = document.querySelector(".open-switch");
+
+        openanSwitcButton.addEventListener("click", () => SwitcDialog.open = true);
+
+
+
+        const TypesDrawer = document.querySelector(".types-drawer");
+        const openTypesButton = document.querySelectorAll(".open-types");
+        const closeTypesButton = document.querySelector(".close-types");
+        openTypesButton.forEach(button => {
+          button.addEventListener("click", () => TypesDrawer.open = true);
+        });
+        closeTypesButton.addEventListener("click", () => TypesDrawer.open = false);
+
+        const FeedBackDialog = document.querySelector(".feedback-dialog");
+        const openanFeedBackButtons = document.querySelectorAll(".zc-feedback");
+
+        openanFeedBackButtons.forEach(button => { button.addEventListener("click", () => { FeedBackDialog.open = true }); });
+
+        if (localStorage.darkTheme) {
+          document.body.classList.add("mdui-theme-layout-dark");
+          document.body.classList.add("mdui-theme-dark");
+          document.documentElement.classList.add("mdui-theme-dark");
+          document.body.setAttribute("dark", "");
+          $("#layui_theme_css").attr("href", "/css/layui-theme-dark.css");
+        }
+        document.getElementById("switch-theme").addEventListener("click", () => {
+          document.body.classList.toggle("mdui-theme-layout-dark");
+          document.body.classList.toggle("mdui-theme-dark");
+          document.documentElement.classList.toggle("mdui-theme-dark");
+          document.body.toggleAttribute("dark");
+          if (document.body.hasAttribute("dark")) {
+            localStorage.darkTheme = true;
+            $("#layui_theme_css").attr("href", "/css/layui-theme-dark.css");
+          } else {
+            delete localStorage.darkTheme;
+            $("#layui_theme_css").removeAttr("href");
+          }
+        });
+      </script>
+
+      <mdui-dialog id="webdialog" fullscreen width="1000">
+        <mdui-top-app-bar slot="header">
+          <mdui-button-icon icon="close" onclick="webdialog.open = false"></mdui-button-icon>
+          <mdui-top-app-bar-title></mdui-top-app-bar-title>
+          <div style="flex-grow: 1"></div>
+          <mdui-button-icon icon="fullscreen" onclick="webdialog.fullscreen = !webdialog.fullscreen "
+            id="webdialogfull"></mdui-button-icon>
+          <mdui-button-icon icon="open_in_new" onclick="window.open(`${webdialogiframe.src}`)"
+            id="webdialogfull"></mdui-button-icon>
+
+        </mdui-top-app-bar>
+        <iframe frameborder="0" id="webdialogiframe"
+          style="min-height: calc(100vh - 208px);min-width: 497px;width: 100%;border-radius: 15px;">
+          <p>
+            <a href="https://developer.mozilla.org/zh-CN/docs/Glossary">
+              此设备无法使用此功能
+            </a>
+          </p>
+        </iframe>
+      </mdui-dialog>
+
+
+      <script>
+
+
+
+
+        editorurl='http://localhost:8601'
+      </script>
+      <script src="/js/js-cookie.js"></script>
+      <script src="/js/jwt-decode.js"></script>
+
+
+      </html>
+    <script type="text/javascript" src="/js/jquery.3.7.1.js"></script>
+    <script type="text/javascript" src="/static/layui/layui.all.js"></script>
+    <script type="text/javascript" src="/js/gter.js"></script>
+
+        <script type="text/javascript" src="/js/login.js"></script>
+
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?compat=recaptcha&onload=repwonloadCallback" async defer></script>
+
+<script>
+rekey='1x00000000000000000000AA'
+
+function repwonloadCallback() {
+grecaptcha.render("#recaptcha-div-rePW-page", {
+    sitekey: rekey,
+  });
+
+}
+</script>

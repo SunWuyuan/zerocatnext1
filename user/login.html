@@ -258,6 +258,25 @@
     <mdui-layout-main>
       <div class="zc-container" style="border-radius: 15px;">
 
+  <script>
+    $(function () {
+      if (Cookies.get('token')) {
+        if (getQueryString('redirect') == 'editor') {
+          window.location.href = "http://localhost:8601/editor.html?token=" + Cookies.get('token');
+
+
+        } else {
+          window.location.href = '/';
+        }
+      }
+    })
+
+    function getQueryString(name) {
+      const url_string = window.location.href;
+      const url = new URL(url_string);
+      return url.searchParams.get(name);
+    }
+  </script>
 
   <div class="layui-row">
 
@@ -503,22 +522,3 @@
     <script type="text/javascript" src="/js/login.js"></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?compat=recaptcha&onload=onloadCallback" async defer></script>
     <script>rekey = '1x00000000000000000000AA'</script>
-    <script>
-      $(function () {
-        if (Cookies.get('token')) {
-          if (getQueryString('redirect') == 'editor') {
-            window.location.href = "http://localhost:8601/editor.html?token=" + Cookies.get('token');
-
-
-          } else {
-            window.location.href = '/';
-          }
-        }
-      })
-
-      function getQueryString(name) {
-        const url_string = window.location.href;
-        const url = new URL(url_string);
-        return url.searchParams.get(name);
-      }
-    </script>
